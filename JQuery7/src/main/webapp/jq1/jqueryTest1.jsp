@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>/jq1/jqueryTest1.jsp</title>
 </head>
 <body>
-
+	
 </body>
 </html>
