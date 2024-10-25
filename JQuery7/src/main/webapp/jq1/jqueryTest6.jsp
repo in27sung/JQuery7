@@ -40,15 +40,32 @@
 // 		$("table").append("<tr><td>" + data[0].name +"</td><td>"+data[0].region+"</td></tr>");
 		
 		// for문 사용해서 출력 
-		for (var i = 0; i < data.length; i++) {
-			$("table").append("<tr><td>" + data[i].name +"</td><td>"+data[i].region+"</td></tr>");
-		}
+// 		for (var i = 0; i < data.length; i++) {
+// 			$("table").append("<tr><td>" + data[i].name +"</td><td>"+data[i].region+"</td></tr>");
+// 		}
 		
 		// jQuery.each(array, callback); <-> $.each(객체/배열, 콜백함수);
 		$.each(data, function(index, data) {// data 배열에 순차적으로 접근 
-		        $("table").append("<tr><td>" 
-		        		+ data.name + "</td><td>" 
-		        		+ data.region + "</td></tr>");
+			//배열의 크기만큼 처리
+// 			console.log(index);
+// 			console.log(data);
+			$("table").append("<tr><td>" + data.name + 
+							  "</td><td>" + data.region + 
+							  "</td></tr>");
+		});
+		
+		$.each(data, function(index, data) {
+			$("table").append(function(){
+				var result = "<tr>";
+					result += "<td>";
+					result += data.name;
+					result += "</td>";
+					result += "<td>";
+					result += data.region;
+					result += "</td>";
+					result += "</tr>";
+				return result;
+			});
 		});
 
 	});// 제이쿼리 끝
