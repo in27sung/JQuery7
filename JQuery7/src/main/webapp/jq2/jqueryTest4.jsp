@@ -38,8 +38,8 @@
 				url: "string1.jsp",
 // 				dataType: "html(기본값)",	
 				success: function(result){
-					alert("string1.jsp 페이지를 다녀옴");
-					alert(result);
+// 					alert("string1.jsp 페이지를 다녀옴");
+// 					alert(result);
 					$("body").append(result);
 				}// sucess끝
 			})

@@ -50,6 +50,7 @@
 		
 		$.ajax({
 			url: "https://fs.jtbc.co.kr/RSS/economy.xml",
+// 			url: "https://news-ex.jtbc.co.kr/v1/get/rss/issue",
 			success: function(data){
 				alert("JTBC RSS데이터")
 				$(data).find("item").each(function(){
@@ -58,12 +59,12 @@
 					var description = $(this).find("description").text();
 					var pubDate = $(this).find("pubDate").text();
 					
-					$('body').append("<hr>");
-					$('body').append("title: " + title);
-					$('body').append(", link:<a href=" + link + ">"+ description +"</a");
-// 					$('body').append(", description: " + description);
-					$('body').append(", pubDate: " + pubDate);
-					$('body').append("<hr>");
+					$('#jtbcDiv').append("<hr>");
+// 					$('body').append("title: " + title);
+					$('#jtbcDiv').append("<a href='" + link + "'target='_blank'>"+ title +"</a");
+					$('#jtbcDiv').append("<br> description: " + description + "...");
+					$('#jtbcDiv').append("<br> pubDate: " + pubDate);
+					$('#jtbcDiv').append("<hr>");
 				});
 			}
 		});// ajax()
@@ -85,5 +86,8 @@
 	XML은 모든 플랫폼에서 동작 가능(2000년대 가장 많이 사용된 데이터 포멧)-대체언어:JSON
 	표준 데이터 포멧 (데이터를 저장하기 위해) 
 	</p>
+	<div id=jtbcDiv>
+	<h1> JTBC 스포츠 뉴스</h1>
+	</div>
 </body>
 </html>
